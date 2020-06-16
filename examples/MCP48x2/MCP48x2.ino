@@ -7,7 +7,12 @@
 // Define the MCP4822 instance, giving it the SS (Slave Select) pin
 // The constructor will also initialize the SPI library
 // We can also define a MCP4812 or MCP4802
-MCP4822 dac(10);
+
+// STM32F104C8 has two SPI buses, chip select on bus one is PA4, bus two PB12.
+// Until I can do a better job, if you want to use bus one, there are some simple edits to make to MCP48xx.h
+// There are comments.  If someone does a better job feel free to do a pull request & I'll test and commit.
+
+MCP4822 dac(PB12);
 
 // We define an int variable to store the voltage in mV so 100mV = 0.1V
 int voltage = 100;
@@ -39,11 +44,11 @@ void loop() {
     // This is needed every time we make any change
     dac.updateDAC();
 
-    if (voltage * 2 > 4000) {
+    if (voltage * 2 > 3300) { // up to 3.3v if powering from the bluepill board.  Original example was for a 5v arduino.
         voltage = 100;
     }
 
-    voltage = voltage + 100;
+    voltage = voltage + 100;  // for a bit of fun change this to +1 and reduce the delay below to 20 and watch it on a scope
 
     delay(1000);
 }
