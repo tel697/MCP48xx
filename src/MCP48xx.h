@@ -5,6 +5,10 @@
 #include <SPI.h>
 
 
+// This version is for the second bus. To use the first, make the following edits;
+// Use find and replace and change all SPI_2. to SPI_1. (ignoring this line!)
+
+
 template<uint8_t BITS_RES>
 class MCP48xx {
 
