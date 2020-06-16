@@ -13,7 +13,7 @@ The reason for a version specifically for this board is that it has three SPI po
 
 ## Installation
 
-You will need to install this manually, download the zip file and copy the files to the library folder.  If using an original arduino, you probably need the library this is forked from).
+You will need to install this manually, download the zip file and copy the files to the library folder.  If using an original arduino, you probably need the library this is forked from which lives [here](https://github.com/SteveGdvs/MCP48xx).
 
 
 ## Dependencies
