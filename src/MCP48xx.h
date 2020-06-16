@@ -4,6 +4,8 @@
 #include <Arduino.h>
 #include <SPI.h>
 
+#define SPI1_NSS_PIN PA4    //SPI_1 Chip Select pin is PA4.
+#define SPI2_NSS_PIN PB12   //SPI_2 Chip Select pin is PB12.
 
 // This version is for the second bus. To use the first, make the following edits;
 // Use find and replace and change all SPI_2. to SPI_1. (ignoring this line!)
