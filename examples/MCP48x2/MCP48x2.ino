@@ -44,7 +44,7 @@ void loop() {
     // This is needed every time we make any change
     dac.updateDAC();
 
-    if (voltage * 2 > 3300) { // up to 3.3v if powering from the bluepill board.  Original example was for a 5v arduino.
+    if (voltage * 2 > 4000) { // Full range is 0 to 4096 - 12 bits
         voltage = 100;
     }
 
